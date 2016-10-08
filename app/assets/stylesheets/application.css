@@ -17,8 +17,7 @@
 
 @import 'normalize.css';
 @import 'welcome.css';
-/*@import 'podcast.css';
-*/
+@import 'podcast.css';
 
 body {
 	font-family: 'Open Sans', sans-serif;
@@ -121,10 +120,10 @@ body {
 }
 
 .podcast_banner {
-	background-image: url(../images/p4.jpg);
+	background-image: url('p4.jpg');
 }
 .sign_in_banner {
-	background-image: url(../images/sign_in.jpg);
+	background-image: url('sign_in.jpg');
 }
 
 .sign_in_banner h1 {
@@ -133,7 +132,7 @@ body {
 }
 
 .sign_up_banner {
-	background-image: url(../images/sign_up.jpg);
+	background-image: url('sign_up.jpg');
 }
 
 .sign_up_banner h1 {
