@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20161007095704) do
     t.datetime "updated_at",                          null: false
     t.string   "title"
     t.text     "description"
-    t.         "itunes"
+    t.string   "itunes"
     t.string   "stitcher"
     t.string   "podbay"
     t.index ["email"], name: "index_podcasts_on_email", unique: true
