@@ -5,10 +5,10 @@
 	<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   	<%= f.error_notification %>
   	<div class="form-inputs wrapper_skinny" >
-		<%= f.input :title, autofocus: true, class: 'field' %>
-	    <%= f.input :email, class: 'field' %>
-	    <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class: 'field' %>
-	    <%= f.input :password_confirmation, class: 'field' %>
+		<%= f.input :title, autofocus: true, class: 'field' %><br>
+	    <%= f.input :email, class: 'field' %><br>
+	    <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class: 'field' %><br>
+	    <%= f.input :password_confirmation, class: 'field' %><br><br>
 
 	    <div class="actions">
 	    <%= f.button :submit, "Click to Sign Up", class: "button button_highlight button_block" %>
