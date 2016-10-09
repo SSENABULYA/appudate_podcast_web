@@ -1,0 +1,92 @@
+<div id="podcast_show">
+	<div id="show_banner">
+		<div class="wrapper_skinny">
+			<h1><%= @podcast.title %></h1>
+			<p class="description">
+				<%= @podcast.description %>
+			</p>
+			<% unless @podcast.itunes.blank? %>
+				<a href="<%= @podcast.itunes %>" class="subscribe_link">iTunes</a>
+			<% end %>
+			<% unless @podcast.stitcher.blank? %>
+				<a href="<%= @podcast.stitcher %>" class="subscribe_link">Stitcher</a>
+			<% end %>
+			<% unless @podcast.podbay.blank? %>
+				<a href="<%= @podcast.podbay %>" class="subscribe_link">Podbay</a>
+			<% end %>
+		</div>
+	</div>
+	<div id="breadcrumb">
+		<%= link_to podcasts_path do %>
+			All Podcasts
+			<span>/</span>
+			Why we fail to implement our goals
+		<% end %>
+	</div>
+	<div id="episodes">
+		<div class="wrapper_skinny">
+			<ul class="cf">
+				<li class="cf">
+					<div class="episode_thumbnail">
+						<a href="episode.html">
+							<img src="../images/thumb1.jpg" alt="thumb1">
+						</a>
+					</div>
+					<div class="episode_overview">
+						<h2><a href="episode.html">To remember our goals we should write them down</a></h2>
+						<p class="descriptions">
+						Perhaps what you need to know is to go back to the basics and remind yourself why you set these goals in the first place...</p>
+					</div>
+				</li>
+
+				<li class="cf">
+					<div class="episode_thumbnail">
+						<a href="episode.html">
+							<img src="../images/thumb2.jpg" alt="thumb2">
+						</a>
+					</div>
+					<div class="episode_overview">
+						<h2><a href="episode.html">To remember our goals we should write them down</a></h2>
+						<p class="descriptions">
+						Perhaps what you need to know is to go back to the basics and remind yourself why you set these goals in the first place...</p>
+					</div>
+				</li>
+
+				<li class="cf">
+					<div class="episode_thumbnail">
+						<a href="episode.html">
+							<img src="../images/thumb3.jpg" alt="thumb3">
+						</a>
+					</div>
+					<div class="episode_overview">
+						<h2><a href="episode.html">To remember our goals we should write them down</a></h2>
+						<p class="descriptions">
+						Perhaps what you need to know is to go back to the basics and remind yourself why you set these goals in the first place...</p>
+					</div>
+				</li>
+
+				<li class="cf">
+					<div class="episode_thumbnail">
+						<a href="episode.html">
+							<img src="../images/thumb4.jpeg" alt="thumb4">
+						</a>
+					</div>
+					<div class="episode_overview">
+						<h2><a href="episode.html">To remember our goals we should write them down</a></h2>
+						<p class="descriptions">
+						Perhaps what you need to know is to go back to the basics and remind yourself why you set these goals in the first place...</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="pagination">
+	<span class="previous_page disabled">Previous</span>
+	<em class="current">1</em>
+	<a href="#" class="next_page">2</a>
+	<a href="#" class="next_page">3</a>
+	<a href="#" class="next_page">4</a>
+	<a href="#" class="next_page">5</a>
+	<a href="#" class="next_page">Next</a>
+</div>

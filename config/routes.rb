@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :podcasts
+  	get 'podcasts/index'
+
+  	get 'podcasts/show'
+
+  	devise_for :podcasts
 	root 'welcome#index'
+	resources :podcasts, only: [:index, :show]
+
   # get 'welcome/index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
