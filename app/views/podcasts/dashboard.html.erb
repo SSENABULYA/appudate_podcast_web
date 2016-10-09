@@ -1,0 +1,54 @@
+<div id="podcast_show">
+  <div id="show_banner">
+    <div class="wrapper_skinny">
+      <h1>Appudate Podcast Dashboard</h1>
+    </div>
+  </div>
+  
+  <div id="link">
+    <div class="wrapper_skinny">
+      <ul>
+        <li class="current_episode" >Episodes</li>
+        <li><%= link_to "New Episode", new_podcast_episode_path(@podcast) %></li>
+        <li><%= link_to "Account Settings", edit_podcast_registration_path %></li>
+        <li><%= link_to "View Podcast", podcast_path(current_podcast) %></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="episodes">
+		<div class="wrapper_skinny">
+			<ul class="cf">
+			<!-- creating the loop for our podcast -->
+				<% @episodes.each do |episode| %>
+				<li class="cf">
+					<div class="episode_thumbnail">
+						<a href="episode.html">
+							<img src="../images/thumb1.jpg" alt="thumb1">
+						</a>
+					</div>
+					<div class="episode_overview">
+						<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
+						<p class="descriptions">
+						<%= truncate(episode.description, length: 100) %></p>
+						<div class="authorized_link">
+							<%= link_to "Edit", edit_podcast_episode_path(@podcast, episode) %>
+							<%= link_to "Delete", podcast_episode_path(@podcast, episode), method: :delete, data: {confirm: "Are you sure you want to delete this episode?"} %>
+						</div>
+					</div>
+				</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="pagination">
+<span class="previous_page disabled">Previous</span>
+<em class="current">1</em>
+<a href="#" class="next_page">2</a>
+<a href="#" class="next_page">3</a>
+<a href="#" class="next_page">4</a>
+<a href="#" class="next_page">5</a>
+<a href="#" class="next_page">Next</a>
+</div>
