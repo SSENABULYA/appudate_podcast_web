@@ -8,42 +8,44 @@
   <div id="link">
     <div class="wrapper_skinny">
       <ul>
-        <li class="current_episode">Episode</li>
+        <li>Episode</li>
         <li><a href="#">New Episodes</a></li>
-        <li><%= link_to "Account Settings", edit_podcast_registration_path, class: "current_episode" %></li>
+        <li class="current_episode">Account Settings</li>
         <li><a href="#">View Podcast</a></li>
       </ul>
     </div>
   </div>
 </div>
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+  
+<div id="form">
+  <div class="wrapper_skinny">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+      <div class="form-inputs field">
+        <%= f.input :title, autofocus: true %><br>
+        <%= f.input :description %><br>
+        <%= f.input :email %><br>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+        <h2>Links</h2>
+        <%= f.input :itunes %><br>
+        <%= f.input :stitcher %><br>
+        <%= f.input :podbay %><br>
+        <%= f.input :password, autocomplete: "off", placeholder: "leave it blank if you don't want to change it", required: false %><br>
+        <%= f.input :password_confirmation, required: false %><br>
+        <%= f.input :current_password, placeholder: "we need your current password to confirm your changes" %>
+      </div>
 
-  <div class="form-inputs">
-    <%= f.input :title %><br>
-    <%= f.input :description %><br>
-    <%= f.input :email, required: true, autofocus: true %><br>
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <div class="actions">
+        <%= f.button :submit, "Click to Update", class: "button button_highlight button_block" %>
+      </div>
     <% end %>
-    <h2>Links</h2>
-    <%= f.input :itunes %><br>
-    <%= f.input :stitcher %><br>
-    <%= f.input :podbay %><br>
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %><br>
-    <%= f.input :password_confirmation, required: false %><br>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+
+    <h3>Cancel my Account</h3>
+
+    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, data: {confirm: "Are you sure you want to delete your account?"} %></p>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>

@@ -203,3 +203,10 @@ textarea {
 #form {
 	padding: 0rem 0 5rem 0;
 }
+.current_episode {
+	color: #d2674e;
+}
+
+.current_episode li a {
+	color: #d2674e;
+}
