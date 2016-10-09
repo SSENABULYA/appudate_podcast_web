@@ -1,0 +1,13 @@
+<h1>New Episodes</h1>
+<div id="form">
+	<%= simple_form_for ([@podcast, @episode]) do |f| %>
+		<div class="form-inputs wrapper_skinny"><br>
+		    <%= f.input :title, required: false, autofocus: true, class: 'field' %><br>
+		    <%= f.input :description, required: false, class: 'field' %><br>
+	    </div>
+
+	    <div class="actions">
+	    	<%= f.button :submit, "Create a Podcast", class: "button button_highlight button_block" %>
+	    </div>
+	<% end  %>
+</div>

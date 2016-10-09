@@ -1,11 +1,21 @@
 Rails.application.routes.draw do
-  	get 'podcasts/index'
+  # get 'episodes/index'
 
-  	get 'podcasts/show'
+  # get 'episodes/new'
+
+  # get 'episodes/create'
+
+  # get 'episodes/delete'
+
+  # 	get 'podcasts/index'
+
+  # 	get 'podcasts/show'
 
   	devise_for :podcasts
-	root 'welcome#index'
-	resources :podcasts, only: [:index, :show]
+  	root 'welcome#index'
+  	resources :podcasts, only: [:index, :show]  do
+      resources :episodes
+    end
 
   # get 'welcome/index'
 
