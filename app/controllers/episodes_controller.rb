@@ -1,6 +1,6 @@
 class EpisodesController < ApplicationController
 	before_action :find_podcast
-	before_action :find_episode, only: [:show]
+	before_action :find_episode, only: [:show, :edit, :update, :destroy]
   def index
   end
 
@@ -22,6 +22,10 @@ class EpisodesController < ApplicationController
   end
 
   def delete
+  end
+  def edit
+
+    
   end
 
   private
