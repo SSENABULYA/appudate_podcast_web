@@ -7,6 +7,7 @@
   	<div class="form-inputs wrapper_skinny" >
 		<%= f.input :title, autofocus: true, class: 'field' %><br>
 	    <%= f.input :email, class: 'field', placeholder: 'lubwils@example.com' %><br>
+	    <%= f.input :thumbnail, as: :file %><br>
 	    <%= f.input :password, placeholder: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class: 'field' %><br>
 	    <%= f.input :password_confirmation, class: 'field' %><br><br>
 

@@ -25,6 +25,7 @@
       <div class="form-inputs field">
         <%= f.input :title, autofocus: true %><br>
         <%= f.input :description %><br>
+        <%= f.input :thumbnail, as: :file %><br>
         <%= f.input :email %><br>
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>

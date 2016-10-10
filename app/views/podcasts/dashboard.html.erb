@@ -1,7 +1,7 @@
 <div id="podcast_show">
   <div id="show_banner">
     <div class="wrapper_skinny">
-      <h1>Appudate Podcast Dashboard</h1>
+      <h1><%= @podcast.title %></h1>
     </div>
   </div>
   
@@ -24,7 +24,7 @@
 				<li class="cf">
 					<div class="episode_thumbnail">
 						<a href="episode.html">
-							<img src="../images/thumb1.jpg" alt="thumb1">
+							<%= image_tag episode.episode_thumbnail.url(:medium) %>
 						</a>
 					</div>
 					<div class="episode_overview">

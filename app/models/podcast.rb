@@ -4,4 +4,7 @@ class Podcast < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :episodes
+
+  has_attached_file :thumbnail, styles: { large: "960x960#", medium: "600x600#" }
+  validates_attachment_content_type :thumbnail, content_type: /\Aimage\/.*\z/
 end
