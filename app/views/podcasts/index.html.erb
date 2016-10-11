@@ -1,20 +1,22 @@
 <div id="banner" class="podcast_banner">
-			<h1>Our journey is to Discover, Develop and Deliver <br> Software Applications to you.</h1>
-		</div>
-	<div id="podcast" class="cf">
-		<div class="wrapper">
-			<ul>
-				<% @podcasts.each do |podcast| %>
-					<%= link_to podcast do %>
-						<li>
-							<%= image_tag podcast.thumbnail.url(:medium) %>
-							<div class="podcast_overview">
-							<h2><%= podcast.title %></h2>
-							<p class="episode_count">Episode 1</p>
-						</div>
-					</li>
-				<% end %>
-			<% end %>
-			
-	</div>
+	<h1>Our journey is to Discover, Develop and Deliver <br> Software Applications to you.</h1>
 </div>
+<div id="podcast" class="cf">
+	<div class="wrapper">
+		<ul class="cf">
+			<% @podcasts.each do |podcast| %>
+				<%= link_to podcast do %>
+					<li>
+						<%= image_tag podcast.thumbnail.url(:medium) %>
+						<div class="podcast_overview">
+						<h2><%= podcast.title %></h2>
+						<p class="episode_count">Episode 1</p>
+					</div>
+				</li>
+			<% end %>
+		<% end %>
+		</ul>
+		<%= will_paginate @podcasts %>
+	</div>	
+</div>
+
