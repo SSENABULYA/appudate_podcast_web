@@ -1,0 +1,21 @@
+<header id="main_header" class="cf">
+  <div class="wrapper">
+    <%= link_to "Appudate. Podcast", root_path, id: "logo1"%>
+    <!-- <a href="index_page.html" id="logo1">Appudate. Podcast</a> -->
+    <nav>
+      <ul>
+        <% unless podcast_signed_in? %>
+          <li><%= link_to "Explore", podcasts_path %></li>
+          <li><%= link_to "Sign In", new_podcast_session_path %></li>
+          <li><%= link_to "Create a Podcast", new_podcast_registration_path %></li>
+        <% else %>
+          <li><%= link_to "Dashboard", root_path %></li>
+          <li><%= link_to "Explore", podcasts_path %></li>
+          <li>
+            <%= link_to "Sign Out", destroy_podcast_session_path, method: :delete, data: {confirm: "Are you sure you want to sign out?"} %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
